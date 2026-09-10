@@ -1,0 +1,17 @@
+label {
+  display: block;
+  margin: 10px;
+  margin-bottom: 25px;
+}
+h1 {
+  margin-bottom: 50px;
+}
+body{
+  text-align: center;
+  padding: 30px;
+  margin: 25px;
+}
+li{
+  list-style-position: inherit ;
+  padding: 15px;
+}
