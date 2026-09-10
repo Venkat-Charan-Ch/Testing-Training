@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Course Registration</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Course Registration Form</h1>
+    <form id = "regForm">
+        <label for = "name">Name: <input type = "text" name = "name"></label>
+        <label for = "age">Age: <input type = "number" name = "age"></label>
+        <label for = "address">Address: <input type = "text" name = "address"></label>
+        <label for = "gender">Gender: <br> <br>
+            <input type = "radio" value = "Male" name = "choice"> Male. <br>
+            <input type = "radio" value = "Female" name = "choice"> Female. <br>
+            <input type = "radio" value = "Others" name = "choice"> Others. <br>
+            <input type = "radio" value = "PreferNotToSay" name = "choice"> Prefer not to say. <br>
+        </label>
+        <label for = "Course">Course: 
+            <select name = "course">
+                <option value = "python">Python</option>
+                <option value = "javascript">JavaScript</option>
+                <option value = "java">Java</option>
+            </select>
+        </label>
+        <label for = "t&c">
+            <input type="checkbox" name = "t&c" value = "yes" required>
+            <a href = "https://youtu.be/dQw4w9WgXcQ?si=W6EjNIrbKXrmhLoH" target = "_blank">I accept the Terms and Conditions.</a>
+        </label>
+        <label for = "about">Tell us about yourself: <br> <br>
+            <textarea name = "about" rows = "4" cols = "50" placeholder = "Type about yourself here...."></textarea>
+        </label>
+        <br><br>
+        <button type="submit">Register</button>
+    </form>
+    <script src="script.js"></script>
+  </body>
+</html>
