@@ -12,6 +12,6 @@ body{
   margin: 25px;
 }
 li{
-  list-style-position: inherit ;
+  list-style-position: inside ;
   padding: 15px;
 }
