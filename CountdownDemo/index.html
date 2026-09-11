@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<body>
+    <h1 id = "countdown"></h1>
+    <script type = "text/javascript">
+        const cD = document.getElementById("countdown");
+        let count = 11;
+        const timer = setInterval(function() {
+            count--;
+            cD.textContent = count;
+            if (count === -1) {
+                clearInterval(timer);
+                cD.textContent = "";
+                
+                document.body.style.backgroundImage = "url('image1.png')";
+            }
+        }, 1000);
+    </script>
+</body>

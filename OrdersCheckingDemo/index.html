@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<body>
+    <button type = "submit" id = "saveBtn">Save</button>
+    <p id = "message"></p>
+    <script type = "text/javascript">
+        const saveButton = document.getElementById("saveBtn");
+        const saveMsg = document.getElementById("message");
+        saveButton.addEventListener("click", function() {
+            saveMsg.textContent = "Saving...";
+            saveButton.disabled = true;
+
+            setTimeout(function() {
+                saveMsg.textContent = "Saved!";
+                saveButton.disabled = false;
+                setTimeout(function() {
+                    saveMsg.textContent = "";
+                }, 2000);
+            }, 2500);
+        });
+    </script>
+</body>
