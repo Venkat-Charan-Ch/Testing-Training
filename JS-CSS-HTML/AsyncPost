@@ -1,0 +1,15 @@
+async function sendPostRequest() {
+    const url = 'https://dummyjson.com/c/6c4f-e117-4be1-9842';
+  
+    const payload = {
+        title: 'Hello World',
+        body: 'This is an async post request example.'
+    };
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(payload)
+});
+};
