@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product List</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://jsdelivr.net" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+<div class="container mt-5">
+  <!-- Success Messages (e.g., after adding a product) -->
+  {% if messages %}
+    {% for message in messages %}
+      <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    {% endfor %}
+  {% endif %}
+
+  <div class="card shadow-sm">
+    <div class="card-header bg-white d-flex justify-content-between align-items-center py-3">
+      <h4 class="mb-0 text-primary">Products</h4>
+      <!-- Replace 'add_product' with the exact URL name from your urls.py -->
+      <a href="{% url 'add_products' %}" class="btn btn-primary btn-sm">+ Add New Product</a>
+    </div>
+
+    <div class="card-body p-0">
+      <div class="table-responsive">
+        <table class="table table-hover align-middle mb-0">
+          <thead class="table-light">
+            <tr>
+              <th scope="col" class="ps-4">#</th>
+              <th scope="col">Product Name</th>
+              <th scope="col">Price</th>
+              <th scope="col">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for product in products %}
+              <tr>
+                <td class="ps-4 text-muted">{{ forloop.counter }}</td>
+                <td class="fw-semibold">{{ product.name }}</td>
+                <td>₹{{ product.price }}</td>
+                <td class="text-muted">{{ product.description }}</td>
+              </tr>
+            {% empty %}
+              <tr>
+                <td colspan="4" class="text-center py-4 text-muted">
+                  No products found. Click <strong>+ Add New Product</strong> to create one.
+                </td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap 5 JS Bundle -->
+<script src="https://jsdelivr.net"></script>
+</body>
+</html>
